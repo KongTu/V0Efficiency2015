@@ -173,8 +173,10 @@ void eposEfficiencyRapidity_Pbp(){
  * 2D efficiency Table:
  */
 
- 	TH2D* ks_eff = new TH2D("ks_eff","ks_eff",5,rpybins,26,ks_ptbins); 
- 	TH2D* la_eff = new TH2D("la_eff","la_eff",5,rpybins,20,ptbins);
+ 	double rpybins_fill[6] = {-1.9,-1.2,-0.5,0.3,1.0,1.9};
+
+ 	TH2D* ks_eff = new TH2D("ks_eff","ks_eff",5,rpybins_fill,26,ks_ptbins); 
+ 	TH2D* la_eff = new TH2D("la_eff","la_eff",5,rpybins_fill,20,ptbins);
 
    	for ( rpy = 0; rpy < 5; rpy++){
 
@@ -199,7 +201,7 @@ void eposEfficiencyRapidity_Pbp(){
    	}
    	
 
-   	TFile f1("EPOS_Pbp_30M_JAN_26_v4_2015.root","new");
+   	TFile f1("EPOS_Pbp_30M_JAN_26_v6_test_2015.root","new");
 
 	ks_eff->Write();
 	la_eff->Write();

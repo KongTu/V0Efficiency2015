@@ -17,10 +17,10 @@ void DataEposVertexRatio_MultDependProducer(){
 	file2[1] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/MB_Nov10_35_60.root");
 	file2[2] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/MB_Nov10_60_90.root");
 	file2[3] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/MB_Nov10_90_120.root");
-	file2[4] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/HM_Nov10_120_150.root");
-	file2[5] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/HM_Nov10_150_185.root");
-	file2[6] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/HM_Nov10_185_220.root");
-	file2[7] = new TFile("/Users/kongkong/2014Research/ROOT_file/new_pPb_sample/HM_Nov10_220plus.root");
+	file2[4] = new TFile("/Users/kongkong/2015Research/ROOT_file/data/vertexCheck/Data_Mult_120_150_FEB_4_2015.root");
+	file2[5] = new TFile("/Users/kongkong/2015Research/ROOT_file/data/vertexCheck/Data_Mult_150_185_FEB_4_2015.root");
+	file2[6] = new TFile("/Users/kongkong/2015Research/ROOT_file/data/vertexCheck/Data_Mult_185_220_FEB_4_2015.root");
+	file2[7] = new TFile("/Users/kongkong/2015Research/ROOT_file/data/vertexCheck/Data_Mult_220plus_FEB_4_2015.root");
 
 	stringstream dataName;
 
@@ -60,8 +60,10 @@ void DataEposVertexRatio_MultDependProducer(){
 	for(mult = 0; mult < 8; mult++){
 
 		c1->cd(mult+1);
+		gPad->SetTicks();
 		vertex_data[mult]->GetYaxis()->SetTitle("data/epos vertexRatio");
 		vertex_data[mult]->GetYaxis()->SetRangeUser(0,2.2);
+		vertex_data[mult]->SetStats(kFALSE);
 		vertex_data[mult]->Draw();
 		ratio[mult]->Draw("same");
 

@@ -113,6 +113,10 @@ void eposEfficiencyRapidity_pPb(){
 
 	   	}
    	}	
+
+   	TCanvas* c1 = new TCanvas();
+
+   	c1->Print("ks_fit.pdf[");
    	
 
    	double ksYield[5][26];
@@ -124,6 +128,8 @@ void eposEfficiencyRapidity_pPb(){
 
    			ksYield[rpy][pt] = ks_YieldCal( ks_mass[rpy][pt] );
 
+   			c1->Print("ks_fit.pdf");
+
    		}
 
 	   	for ( i = 0; i < 20; i++){
@@ -133,7 +139,7 @@ void eposEfficiencyRapidity_pPb(){
 	   	}
    	}
    	
-
+	c1->Print("ks_fit.pdf]");
 /**
  * Efficiency in differentrpy bins:
  */
@@ -173,8 +179,10 @@ void eposEfficiencyRapidity_pPb(){
  * 2D efficiency Table:
  */
 
- 	TH2D* ks_eff = new TH2D("ks_eff","ks_eff",5,rpybins,26,ks_ptbins); 
- 	TH2D* la_eff = new TH2D("la_eff","la_eff",5,rpybins,20,ptbins);
+ 	double rpybins_fill[6] = {-1.9,-1.0,-0.3,0.5,1.2,1.9};
+
+ 	TH2D* ks_eff = new TH2D("ks_eff","ks_eff",5,rpybins_fill,26,ks_ptbins); 
+ 	TH2D* la_eff = new TH2D("la_eff","la_eff",5,rpybins_fill,20,ptbins);
 
    	for ( rpy = 0; rpy < 5; rpy++){
 
@@ -199,7 +207,7 @@ void eposEfficiencyRapidity_pPb(){
    	}
    	
 
-   	TFile f1("EPOS_pPb_30M_JAN_26_v4_2015.root","new");
+   	TFile f1("EPOS_pPb_30M_JAN_26_v6_test_2015.root","new");
 
 	ks_eff->Write();
 	la_eff->Write();

@@ -173,12 +173,12 @@ double ks_YieldCal( TH1D* inputHist ){
 
     x.setRange("cut",0.45,0.54);
 
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
 
     sum.plotOn(xframe,Name("sum"),NormRange("cut"),LineWidth(0.5),LineColor(kRed));
     sum.plotOn(xframe,Components(poly),NormRange("cut"),LineStyle(kDashed),LineWidth(0.5),LineColor(kRed));
@@ -283,12 +283,12 @@ double la_YieldCal( TH1D* inputHist ){
 
     x.setRange("cut",1.10,1.14);
 
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
-    sum.fitTo(data,Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
+    sum.fitTo(data,Hesse(kFALSE),Range("cut"));
 
     sum.plotOn(xframe,Name("sum"),NormRange("cut"),LineWidth(0.5),LineColor(kRed));
     sum.plotOn(xframe,Components(poly),NormRange("cut"),LineStyle(kDashed),LineWidth(0.5),LineColor(kRed));
